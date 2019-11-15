@@ -1,4 +1,4 @@
-# Integrating a TOUGHswitch with a UniFi controller
+# Integrating a Cisco switch with a UniFi controller
 
 The UniFi controller provides integration for Ubiquiti's UniFi hardware. However, they don't really support anything but their overpriced switches. This project aims to add basic read-only support to the UnifiController using SNMP v2 and v3 from Cisco devices.
 
