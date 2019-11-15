@@ -1,52 +1,8 @@
 # Integrating a TOUGHswitch with a UniFi controller
 
-The UniFi controller provides integration for Ubiquiti's UniFi hardware. An important element
-that is often used with basic UniFi-based WiFi networks, is the
-[TOUGHswitch](https://www.ubnt.com/accessories/toughswitch/), which provides
-switching and power-over-ethernet capability for the access points. This family of switches,
-however, does not integrate with the UniFi controller
-(and [it appears Ubiquiti won't do so](https://community.ubnt.com/t5/UniFi-Routing-Switching/Tough-Switch-integration-with-Unifi-4-6/td-p/1191186)).
-This project adds basic read-only support for the UniFi controller to TOUGHswitch firmware.
+The UniFi controller provides integration for Ubiquiti's UniFi hardware. However, they don't really support anything but their overpriced switches. This project aims to add basic read-only support to the UnifiController using SNMP v2 and v3 from Cisco devices.
 
-**Important note:** _this is an adaptation of the official TOUGHswitch firmware, independent of
-Ubiquiti. It has not been tested thoroughly, and as such it might cause issues, e.g. performance
-might suffer. Bricking is very unlikely, but not entirely impossible. You may lose your warranty._
-
-![UniFi controller with a TOUGHswitch](screenshot-unifi-controller.png)
-
-
-## Build
-
-To build an adapted version of the [TOUGHswitch firmware](https://www.ubnt.com/download/accessories/toughswitch),
-you need a number of tools. On [Debian](http://www.debian.org/) or [Ubuntu](https://www.ubuntu.com/desktop)
-Linux, installing the following will do. Run:
-
-```sh
-sudo apt-get install make gcc libc6-dev zlib1g-dev wget squashfs-tools
-```
-
-Then download the latest `dist.build.tar.gz` from
-the [releases](https://github.com/wvengen/unifi-controllable-switch/releases) page
-and build it:
-
-```sh
-tar xzf dist.build.tar.gz
-cd build
-make firmware
-```
-
-This will download the firmware from Ubiquiti. Then it will be unpacked, modified,
-and repacked. If all succeeds, this results in a firmware file that you can install directly.
-
-
-## Install
-
-The resulting firmware file `SW.v<version>.<build_number>+unifi<version>.bin` can be uploaded
-using the switch's web interface, and after pressing _Update_ and waiting a couple of minutes,
-a UniFi controller running on the same network would show the switch for adoption. The interface
-will show _UniFi Switch 8 POE-150W_ for the 8-port TOUGHswitch, and _UniFi Switch 8 POE-60W_ for
-the 5-port version.
-
+This project borrows from the similarly named project unifi-controllable-switch which was a custom TOUGHswitch firmware. Unfortunately, unlike the TOUGHswitch project, Cisco devices to not run a Linux based OS. You will need a Windows or Linux computer to run against your switches to poll SNMP and send the UniFi announcements to your UniFi controller.
 
 ## Links
 
