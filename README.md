@@ -2,7 +2,7 @@
 
 The UniFi controller provides integration for Ubiquiti's UniFi hardware. However, they don't really support anything but their overpriced switches. This project aims to add basic read-only support to the UnifiController using SNMP v2 and v3 from Cisco devices.
 
-This project borrows from the similarly named project unifi-controllable-switch which was a custom TOUGHswitch firmware. Unfortunately, unlike the TOUGHswitch project, Cisco devices to not run a Linux based OS. You will need a Windows or Linux computer to run against your switches to poll SNMP and send the UniFi announcements to your UniFi controller.
+This project borrows from the similarly named project unifi-controllable-switch which was a custom TOUGHswitch firmware. Unfortunately, unlike the TOUGHswitch project, Cisco devices do not run a Linux based OS. You will need a Windows or Linux computer to run against your switches to poll SNMP and send the UniFi announcements to your UniFi controller.
 
 ## Links
 
